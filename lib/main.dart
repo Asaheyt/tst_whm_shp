@@ -10,14 +10,18 @@ class First extends StatefulWidget {
 }
 
 class _FirstState extends State<First> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'ZenAntiqueSoft',
+      ),
       home: Scaffold(
         backgroundColor: Colors.indigoAccent,
         appBar: AppBar(
-          title: Text("WayHome"),
+          title: Text(
+            'WayHome',
+          ),
           centerTitle: true,
         ),
         body: Center(
@@ -27,7 +31,7 @@ class _FirstState extends State<First> {
               Image(
                 image: AssetImage('images/landscape.jpg'),
               ),
-              Image.asset('icons/brBad.png')
+              Image.asset('icons/brBad.png'),
             ],
           ),
         ),
