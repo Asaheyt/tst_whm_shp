@@ -1,41 +1,16 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(First());
+import 'core/presentation/cubit/app_observer.dart';
+import 'core/presentation/widgets/app.dart';
+import 'injector.dart';
 
-class First extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _FirstState();
-  }
-}
-
-class _FirstState extends State<First> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'ZenAntiqueSoft',
-      ),
-      home: Scaffold(
-        backgroundColor: Colors.indigoAccent,
-        appBar: AppBar(
-          title: Text(
-            'WayHome',
-          ),
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Image(
-                image: AssetImage('images/landscape.jpg'),
-              ),
-              Image.asset('icons/brBad.png'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+void main() {
+  BlocOverrides.runZoned(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await configureDependencies();
+    runApp(const App());
+  }, blocObserver: AppObserver());
 }

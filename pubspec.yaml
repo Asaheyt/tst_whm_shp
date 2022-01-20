@@ -27,8 +27,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  get_it: ^7.2.0
+  flow_builder: ^0.0.6
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.1
+  flutter_localizations:
+    sdk: flutter
+  injectable: ^1.5.3
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -36,8 +43,11 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  build_runner: ^2.1.7
+  injectable_generator: ^1.5.3
   flutter_test:
     sdk: flutter
+  freezed: ^1.1.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -51,6 +61,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -59,8 +70,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/landscape.jpg
-    - assets/icons/brBad.png
+    - assets/images/
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware.
