@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tst_whm_shp/core/presentation/widgets/template.dart';
 
 class HomePage extends StatelessWidget {
   static Page page() => const MaterialPage(child: HomePage());
@@ -8,6 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Template(
+        child: Text('HomePage'),
+      ),
+    );
   }
 }

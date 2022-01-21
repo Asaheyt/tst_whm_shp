@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class Template extends StatelessWidget {
   final Widget child;
@@ -18,6 +19,17 @@ class Template extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ScreenTypeLayout(
+      mobile: Container(),
+      desktop: Row(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: child,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
