@@ -1,24 +1,15 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tst_whm_shp/core/domain/entities/user/user.dart';
+import 'package:tst_whm_shp/core/presentation/cubit/app_state.dart';
+import 'package:tst_whm_shp/core/presentation/cubit/navigation_page.dart';
+import 'package:tst_whm_shp/features/home/presentation/pages/home_page.dart';
 
 List<Page> onGenerateAppViewPages(AppState state, List<Page<dynamic>> pages) {
-  if (state.user == SystemUser.anonymous()) {
-    return [LoginPage.page()];
+  if (state.user == User.anonymous()) {
+    return [HomePage.page()];
   }
-//   switch (state.page) {
-//     case NavigationPage.homePage:
-//       return [HomePage.page()];
-//     case NavigationPage.contentsPage:
-//       return [ContentsPage.page()];
-//     case NavigationPage.partnersPage:
-//       return [PartnersPage.page()];
-//     case NavigationPage.boardsPage:
-//       return [BoardsPage.page()];
-//     case NavigationPage.dictionariesPage:
-//       return [(DictionariesPage.page())];
-//     case NavigationPage.planningPage:
-//       return [PlanningPage.page()];
-//     case NavigationPage.usersPage:
-//       return [UsersPage.page()];
-//   }
-
+  switch (state.page) {
+    case NavigationPage.homePage:
+      return [HomePage.page()];
+  }
 }
